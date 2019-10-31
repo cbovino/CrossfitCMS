@@ -1,10 +1,10 @@
 from django.urls import path
-from rest_framework import routers
-from.views import ScheduleViewSet, EnrollmentViewSet
+from .api import ScheduleAPI, EnrollmentAPI
 
 
-router = routers.DefaultRouter()
-router.register('Schedule', ScheduleViewSet, 'Schedule')
-router.register('Enrollment', EnrollmentViewSet, 'Enrollment')
-
-urlpatterns = router.urls
+urlpatterns = [
+    path('api/Schedule/', ScheduleAPI.as_view()),
+    path('api/Schedule/<int:id>/', ScheduleAPI.as_view()),
+    path('api/Enrollment/', EnrollmentAPI.as_view()),
+    path('api/Enrollment/<int:id>/', EnrollmentAPI.as_view())
+    ]
