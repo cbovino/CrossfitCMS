@@ -36,7 +36,7 @@ export const LoadUser = () => (dispatch, getState) => {
         payload: res.data
       })}, 5000)
     }).catch(err => {
-      console.log('this is the error idiot')
+      console.log('this is the error')
       dispatch({
         type: AUTH_ERROR
       });
@@ -65,7 +65,7 @@ export const LoginUser = (username, password) => dispatch => {
         payload: res.data
       })}, 5000)
     }).catch(err => {
-      console.log('this is the error idiot')
+      console.log('this is the error')
       dispatch({
         type: LOGIN_FAIL
       });
@@ -95,7 +95,7 @@ export const LogoutUser = () => (dispatch, getState) => {
         type: LOGOUT_SUCCESS,
       })}, 5000)
     }).catch(err => {
-      console.log('this is the error idiot')
+      console.log('this is the error')
       console.log(err)
     })
 
@@ -120,7 +120,7 @@ export const RegisterUser = (body) => dispatch => {
         payload: res.data
       })}, 5000)
     }).catch(err => {
-      console.log('this is the error idiot')
+      console.log('this is the error')
       dispatch({
         type: REGISTER_FAIL
       });

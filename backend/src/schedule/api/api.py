@@ -22,16 +22,22 @@ class ScheduleAPI(generics.GenericAPIView,
 
 
 
-class EnrollmentAPI(generics.RetrieveUpdateDestroyAPIView):
+class EnrollmentAPI(generics.GenericAPIView,
+                        mixins.ListModelMixin,
+                        mixins.RetrieveModelMixin,
+                        mixins.UpdateModelMixin,
+                        mixins.DestroyModelMixin):
     queryset = Enrollment.objects.all()
     serializer_class = EnrollmentSerializer
     lookup_field = 'id'
 
 
-    def get(self, request):
-        queryset = self.get_queryset()
-        serializer = EnrollmentSerializer(queryset, many=True)
-        return Response(serializer.data)
+    def get(self, request, id=None):
+        if id:
+            return self.retrieve(request, id)
+        else:
+            return self.list(request)
+
 
     def put(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

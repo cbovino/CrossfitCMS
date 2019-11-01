@@ -12,10 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
 
 /* when the  component mounts, the current user is loaded. On first mount, it should set auth to null. */
-  componentDidMount(){
-    store.dispatch(LoadUser());
-  }
-
+  
   render(){
   return(
     <div>

@@ -3,6 +3,7 @@ export const FETCH_SCHEDULE = "FETCH_SCHEDULE";
 export const FETCH_ENROLLMENT = "FETCH_ENROLLMENT";
 export const ENROLL = "ENROLL";
 export const FULL = "FULL";
+export const DELETE = "DELETE";
 
 export const GET_ERRORS = "GET_ERRORS";
 

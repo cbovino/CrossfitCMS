@@ -1,4 +1,4 @@
-import  { FETCH_SCHEDULE, ENROLL, FULL, FETCH_ENROLLMENT} from "../actions/types"
+import  { FETCH_SCHEDULE, ENROLL, FULL, FETCH_ENROLLMENT, DELETE} from "../actions/types"
 
 const initialState = {
   Schedule: [],
@@ -24,9 +24,11 @@ export default function(state = initialState, action){
         Enrollment: [...state.Enrollment, action.items ]
       }
     case FULL:
+    case DELETE:
       return{
         ...state
       }
+
     default:
       return{
         ...state

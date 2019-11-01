@@ -1,4 +1,4 @@
-import  { FETCH_SCHEDULE, ENROLL, FULL, FETCH_ENROLLMENT } from "./types";
+import  { FETCH_SCHEDULE, ENROLL, FULL, FETCH_ENROLLMENT, DELETE } from "./types";
 import axios from 'axios';
 
 
@@ -52,7 +52,7 @@ export const Enroll = (id, username) => dispatch => {
     )
 
     if (x.length <availabilityRes.data.availability){
-      axios.post('http://127.0.0.1:8000/api/Enrollment/', enrollment).then(res =>
+      axios.put('http://127.0.0.1:8000/api/Enrollment/', enrollment).then(res =>
       {
         dispatch({
           type: ENROLL,
@@ -80,13 +80,15 @@ export const Enroll = (id, username) => dispatch => {
           }
         }
       )
-      const enrollment = {
-        "id": pk,
-        "username" : username,
-        "schedule_id": id
-      }
 
-      console.log(enrollment);
+      axios.delete('http://127.0.0.1:8000/api/Enrollment/' + pk + '/').then(
+        res => {
+          dispatch({
+            type: DELETE,
+            items: id
+          })
+        }
+      )
 
         })
     }
