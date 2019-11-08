@@ -24,9 +24,14 @@ export default function(state = initialState, action){
         Enrollment: [...state.Enrollment, action.items ]
       }
     case FULL:
+      return{
+        ...state,
+        Enrollment: [...state.Enrollment]
+      }
     case DELETE:
       return{
-        ...state
+        ...state,
+        Enrollment: state.Enrollment.filter((item) => item.schedule_id !== action.items)
       }
 
     default:

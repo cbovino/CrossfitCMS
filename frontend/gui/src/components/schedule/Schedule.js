@@ -10,6 +10,7 @@ class Schedule extends Component {
   this.props.fetchEnrollment(this.props.Auth.user.username);
   };
 
+
   render(){
       return(
         <div>

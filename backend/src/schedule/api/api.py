@@ -48,5 +48,6 @@ class EnrollmentAPI(generics.GenericAPIView,
     def delete(self, request, id=None):
         if id:
             return self.destroy(request, id)
+
         else:
             return Response({"it failed"}, status=404)

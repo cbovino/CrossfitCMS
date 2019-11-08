@@ -1,7 +1,7 @@
 import  { FETCH_SCHEDULE, ENROLL, FULL, FETCH_ENROLLMENT, DELETE } from "./types";
 import axios from 'axios';
 
-
+//Fetches Schedule from api
 export function fetchSchedule(){
   return function (dispatch) {
     axios.get('http://127.0.0.1:8000/api/Schedule/')
@@ -14,7 +14,7 @@ export function fetchSchedule(){
   }
 }
 
-
+//Fetches Enrollment from api based on the username in state of Auth
 export function fetchEnrollment(username){
   return function (dispatch) {
   var x = [];
@@ -33,6 +33,7 @@ export function fetchEnrollment(username){
 }
 }
 
+// Enrolls user into class if there is enough availability
 export const Enroll = (id, username) => dispatch => {
   const enrollment = {
     "username" : username,
@@ -68,7 +69,7 @@ export const Enroll = (id, username) => dispatch => {
     }))
   }
 
-
+//Unenrolls user from class and then deletes it from API
   export const Unenroll = (id, username) => dispatch => {
 
     axios.get('http://127.0.0.1:8000/api/Enrollment/').then(
