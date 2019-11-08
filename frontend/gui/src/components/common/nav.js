@@ -22,6 +22,11 @@ class Bar extends React.Component {
                 <span>Schedule</span>
               </Link>
             </Navbar.Brand>
+            <Navbar.Brand>
+              <Link to="/dashboard">
+                <span>Dashboard</span>
+              </Link>
+            </Navbar.Brand>
             <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>

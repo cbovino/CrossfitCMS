@@ -4,6 +4,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 import Login from './components/accounts/Login';
 import Register from './components/accounts/Register';
 import Schedule from './components/schedule/Schedule';
+import Dashboard from './components/dashboard/Dashboard';
 import Bar from './components/common/nav';
 import store from "./store";
 import { LoadUser } from './actions/auth'
@@ -12,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
 
 /* when the  component mounts, the current user is loaded. On first mount, it should set auth to null. */
-  
+
   render(){
   return(
     <div>
@@ -21,6 +22,7 @@ class App extends Component {
         <Switch>
           <Route path = '/Login' component = {Login}/>
           <Route path = '/Register' component = {Register}/>
+          <PrivateRoute path="/dashboard" component= {Dashboard}/>
           <PrivateRoute path="/" component = {Schedule}/>
         </Switch>
       </Router>
