@@ -5,11 +5,11 @@ class WorkoutSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Workout
-        fields = ('type', 'goal', 'description', 'keyMovement')
+        fields = ("id",'type', 'goal', 'description', 'keyMovement', 'date')
 
 
 class ResultSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Result
-        fields = ("id", "username", "workout_id", "time")
+        fields = ("id", "username", "workout_id", "time", "result")
