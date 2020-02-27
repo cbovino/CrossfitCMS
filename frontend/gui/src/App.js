@@ -6,8 +6,6 @@ import Register from './components/accounts/Register';
 import Schedule from './components/schedule/Schedule';
 import Dashboard from './components/dashboard/Dashboard';
 import Bar from './components/common/nav';
-import store from "./store";
-import { LoadUser } from './actions/auth'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
